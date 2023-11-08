@@ -32,11 +32,11 @@ namespace Inheritance
             //modelBuilder.Entity<Product>()
             //    .UseTphMappingStrategy();
 
-            // TPT
+            // TPT (Table per type - har bir tur uchun jadval)
             //modelBuilder.Entity<Product>()
             //    .UseTptMappingStrategy();
 
-            //TPC
+            //TPC (Table per concrete)
             modelBuilder.Entity<Product>()
                 .UseTpcMappingStrategy();
         }
