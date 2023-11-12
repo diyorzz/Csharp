@@ -27,11 +27,9 @@ namespace DiyorMarket.Extensions
                 CreateCustomers(context);
                 CreateSales(context);
                 CreateSaleItems(context);
-                UpdateCustomers(context);
-
-                //CreateSuppliers(context);
-                //CreateSupplies(context);
-                //CreateSupplyItems(context);
+                CreateSuppliers(context);
+                CreateSupplies(context);
+                CreateSupplyItems(context);
 
                 Debug.WriteLine("Database was seeded!");
                 int g = 0;
@@ -40,11 +38,75 @@ namespace DiyorMarket.Extensions
             {
                 Debug.WriteLine(ex.Message);
             }
-            finally
-            {
-            }
         }
+        private static void CreateSupplyItems(DiyorMarketDbContext context)
+        {
+            if (context.SupplyItems.Any()) return;
 
+            var sales = context.Supplies.ToList();
+            var products = context.Products.ToList();
+            List<SaleItem> saleItems = new List<SaleItem>();
+
+            foreach (var sale in sales)
+            {
+                int saleItemsCount = new Random().Next(1, 20);
+
+                for (int i = 0; i < saleItemsCount; i++)
+                {
+                    var randomProduct = GetRandomElement(products);
+                    var quantity = new Random().Next(1, 50);
+
+                    saleItems.Add(new SaleItem()
+                    {
+                        ProductId = randomProduct.Id,
+                        SaleId = sale.Id,
+                        Quantity = quantity,
+                        UnitPrice = randomProduct.SalePrice,
+                    });
+                }
+            }
+            context.SaleItems.AddRange(saleItems);
+            context.SaveChanges();
+        }
+        private static void CreateSupplies(DiyorMarketDbContext context)
+        {
+            if (context.Supplies.Any()) return;
+            List<Supply> supplies = new List<Supply>();
+            var supplier = context.Suppliers.ToList();
+
+            for (int i = 0; i <25; i++)
+            {
+                var randomProduct = GetRandomElement(supplier);
+                if (randomProduct != null)
+                {
+                    supplies.Add(new()
+                    {
+                        SupplyDate = DateTime.Now,
+                        SupplierId = randomProduct.Id
+                    });
+                }
+            }
+            context.Supplies.AddRange(supplies);
+            context.SaveChanges();
+        }
+        private static void CreateSuppliers(DiyorMarketDbContext context) 
+        {
+            if (context.Suppliers.Any()) return;
+            List<Supplier> suppliers = new List<Supplier>();
+
+            for (int i = 0; i < 100; i++)
+            {
+                suppliers.Add(new Supplier()
+                {
+                    FirstName = _faker.Name.FirstName(),
+                    LastName = _faker.Name.LastName(),
+                    PhoneNumber = _faker.Phone.PhoneNumber("+998-##-###-##-##"),
+                    Company=_faker.Company.CompanyName(),
+                });
+            }
+            context.Suppliers.AddRange(suppliers);
+            context.SaveChanges();
+        }
         private static void CreateProducts(DiyorMarketDbContext context)
         {
             if (context.Products.Any()) return;
@@ -127,21 +189,6 @@ namespace DiyorMarket.Extensions
             }
 
             context.Customers.AddRange(customers);
-            context.SaveChanges();
-        }
-
-        private static void UpdateCustomers(DiyorMarketDbContext context)
-        {
-            if (!context.Customers.Any()) return;
-            var customers = context.Customers.AsTracking();
-
-            foreach (var customer in customers)
-            {
-                customer.FirstName = _faker.Name.FirstName();
-                customer.LastName = _faker.Name.LastName();
-                customer.PhoneNumber = _faker.Phone.PhoneNumber("+998-##-###-##-##");
-            }
-
             context.SaveChanges();
         }
 

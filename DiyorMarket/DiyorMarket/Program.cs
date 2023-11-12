@@ -1,7 +1,7 @@
 using DiyorMarket.Domain.Interfaces.Repositories;
 using DiyorMarket.Extensions;
 using DiyorMarket.Infrastructure.Persistence;
-using DiyorMarket.Infrastructure.Persistence.Repositories;s
+using DiyorMarket.Infrastructure.Persistence.Repositories;
 namespace DiyorMarket
 {
     public class Program

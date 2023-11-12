@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiyorMarket", "DiyorMarket\DiyorMarket.csproj", "{EDC82EC1-C803-497E-862C-4A19A2BDB682}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiyorMarket", "DiyorMarket\DiyorMarket.csproj", "{EDC82EC1-C803-497E-862C-4A19A2BDB682}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiyorMarket.Domain", "..\..\lesson\Module-06\Module-06\Lesson09\DiyorMarket.Domain\DiyorMarket.Domain.csproj", "{8A57944C-BA7C-4FBA-81C3-A23FA771F897}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiyorMarket.Domain", "..\..\lesson\Module-06\Module-06\Lesson09\DiyorMarket.Domain\DiyorMarket.Domain.csproj", "{6E90DAB4-7FBF-4FF1-9CB9-98FBA6363E01}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiyorMarket.Infrastructure", "..\..\lesson\Module-06\Module-06\Lesson09\DiyorMarket.Infrastructure\DiyorMarket.Infrastructure.csproj", "{A25E334F-09E2-4E93-8BDE-91041A5C4EAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DiyorMarket.Infrastructure", "..\..\lesson\Module-06\Module-06\Lesson09\DiyorMarket.Infrastructure\DiyorMarket.Infrastructure.csproj", "{28714D52-A228-49FF-8D1B-D15CAD5FC744}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +19,14 @@ Global
 		{EDC82EC1-C803-497E-862C-4A19A2BDB682}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDC82EC1-C803-497E-862C-4A19A2BDB682}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDC82EC1-C803-497E-862C-4A19A2BDB682}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8A57944C-BA7C-4FBA-81C3-A23FA771F897}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8A57944C-BA7C-4FBA-81C3-A23FA771F897}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8A57944C-BA7C-4FBA-81C3-A23FA771F897}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8A57944C-BA7C-4FBA-81C3-A23FA771F897}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A25E334F-09E2-4E93-8BDE-91041A5C4EAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A25E334F-09E2-4E93-8BDE-91041A5C4EAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A25E334F-09E2-4E93-8BDE-91041A5C4EAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A25E334F-09E2-4E93-8BDE-91041A5C4EAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E90DAB4-7FBF-4FF1-9CB9-98FBA6363E01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E90DAB4-7FBF-4FF1-9CB9-98FBA6363E01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E90DAB4-7FBF-4FF1-9CB9-98FBA6363E01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E90DAB4-7FBF-4FF1-9CB9-98FBA6363E01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28714D52-A228-49FF-8D1B-D15CAD5FC744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28714D52-A228-49FF-8D1B-D15CAD5FC744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28714D52-A228-49FF-8D1B-D15CAD5FC744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28714D52-A228-49FF-8D1B-D15CAD5FC744}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
